@@ -1,0 +1,10 @@
+# Ignore the virtual environment directory
+myenv/
+
+# Ignore automatically generated Python files
+*.pyc
+__pycache__/
+
+# Ignore sensitive files and data
+.env
+Creation_Steps.txt

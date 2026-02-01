@@ -2,23 +2,16 @@
 
 ## Project Overview
 
-The Cloud Optimization Engine is a Django-based platform designed to intelligently analyze AWS EC2 instance performance and provide actionable, cost-saving recommendations. By integrating with AWS CloudWatch and a Large Language Model (LLM), the application helps users make informed decisions about their cloud infrastructure, reducing unnecessary spending and improving resource efficiency.
+Scalable Django platform that analyzes AWS EC2 performance metrics and delivers actionable cost-optimization recommendations. Using AWS CloudWatch and an LLM, the system synthesizes instance performance data into clear insights that support cost reduction and resource efficiency.
 
 ---
 
-## Key Features
+## Key Capabilities
 
-1. **API-Driven**
-    Exposes a secure REST API endpoint to receive and process requests.
-
-2. **AWS Integration**
-    Utilizes Boto3 to collect real-time EC2 metrics (e.g., CPU Utilization) from AWS CloudWatch.
-
-3. **LLM-Powered Insights**
-    Sends collected data to an LLM to generate plain-language recommendations for instance type optimization.
-
-4. **Secure Credential Management**
-    Implements best practices for handling sensitive API keys using python-dotenv for environment-isolated configuration.
+1. **REST API interface**: Secure endpoints to accept AWS instance identifiers and return optimization recommendations.
+2. **Real-time AWS telemetry**: Collects EC2 performance metrics (e.g., CPU utilization) via Boto3 from CloudWatch for data-driven analysis.
+3. **LLM-driven recommendations**: Converts performance data into plain-language suggestions for instance sizing or cost savings.
+4. **Credential security**: Manages AWS and OpenAI keys securely using python-dotenv for environment isolation.
 
 ---
 
@@ -34,7 +27,7 @@ The Cloud Optimization Engine is a Django-based platform designed to intelligent
 
 ## Setup and Installation
 
-    Follow these steps to get a local copy of the project up and running.
+    Local Deployment Instructions
 
 ### 1. Clone the Repository
 
@@ -84,8 +77,9 @@ The Cloud Optimization Engine is a Django-based platform designed to intelligent
     python manage.py migrate
 ```
 
-Usage
-Once the server is running and you have an EC2 instance in your AWS account, you can test the API.
+### 6. Usage
+
+**Run & Test the API**
 
 1. Start the Server
 
@@ -100,9 +94,9 @@ Use a tool like Postman or the curl command to send an EC2 instance ID to your A
         http://127.0.0.1:8000/api/optimize/
     ```
 
-## Future Enhancements
+## Planned Enhancements
 
-1. Build a frontend to provide a user-friendly interface for instance management.
-2. Integrate additional AWS metrics (e.g., NetworkIn, DiskReadBytes) for more comprehensive recommendations.
-3. Add support for other AWS services, such as S3 or RDS
-4. Implement a history of recommendations for long-term analysis.
+* Develop a user interface for interactive instance management and visualization.
+* Expand metric coverage (Network, Disk I/O) to strengthen recommendation accuracy.
+* Extend optimization support to additional AWS services (e.g., S3, RDS).
+* Add recommendation history tracking to analyze trends over time.
